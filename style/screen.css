@@ -1,0 +1,243 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* typography */
+    --global-root-font-size: 15;
+    /* colors */
+    --global-color-alpha-light: #A3A0FB80;
+    --global-color-alpha: #A3A0FB;
+    --global-color-beta: #3B86FF;
+    --global-color-neutral-xxxx-light: #F0F0F7;
+    --global-color-neutral-xxx-light: #EBEBF2;
+    --global-color-neutral-xx-light: #D7DAE2;
+    --global-color-neutral-x-light: #BCBCCB;
+    --global-color-neutral-light: #A5A4BF;
+    --global-color-neutral: #808495;
+    --global-color-neutral-dark: #4D4F5C;
+    --global-color-neutral-x-dark: #43425D;
+    --global-color-neutral-xx-dark: #3B3B53;
+    /* Shadows */
+    --global-box-shadow: 0 0 0 1px rgba(0, 0, 0, .025), 0 2px 6px rgba(0, 0, 0, .05);
+    --global-box-shadow-lg: 0 0 0 1px rgba(0, 0, 0, .025), 0 2px 10px rgba(0, 0, 0, .1);
+    --global-input-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light);
+    /* radius */
+    --global-borderRadius: calc(4rem / var(--global-root-font-size));
+    /* Whitespace */
+    /* 
+        global font-size = 15px
+        baseline = 5px        
+        15px = 1rem
+        5px = 1rem/3
+        This would equal to 0.3333333...rem but let the browser do the math
+    */
+    --global-baseline: calc(1rem / 3);
+    --global-whitespace-xxs: var(--global-baseline);
+    /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2);
+    /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3);
+    /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4);
+    /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5);
+    /* = 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6);
+    /* = 30px */
+    /* transitions */
+    --global-transition-alpha: .2s;
+    --global-transition-beta: 1s;
+}
+
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-family: loos-normal, sans-serif;
+    background: #fafafa;
+}
+
+ ::selection {
+    background: #1990c7;
+    color: #fafafa;
+}
+
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-app {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fafafa;
+    background: linear-gradient(180deg, #205d8c 0, #002949);
+}
+
+.c-title {
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.c-location {
+    color: #9bd1eb;
+    font-weight: 400;
+}
+
+.c-height {
+    color: #9bd1eb;
+    font-weight: 400;
+}
+
+.c-inline {
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.c-zeespiegel {
+    transform: translateY(720%);
+    z-index: 10;
+    border-bottom: 3px solid white;
+}
+
+@media(max-height:950px) {
+    .c-zeespiegel {
+        transform: translateY(890%);
+    }
+}
+
+@media(max-height:850px) {
+    .c-zeespiegel {
+        transform: translateY(740%);
+    }
+}
+
+@media(max-height:750px) {
+    .c-zeespiegel {
+        transform: translateY(445%);
+    }
+}
+
+@media(max-height:650px) {
+    .c-zeespiegel {
+        transform: translateY(335%);
+    }
+}
+
+.c-zeespiegel-tekst {
+    text-align: right;
+    margin-bottom: 1px;
+    padding-right: 10px;
+}
+
+.c-water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #1990c7;
+    will-change: transform;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+}
+
+.c-water__wave {
+    width: 250%;
+    position: absolute;
+    bottom: 100%;
+}
+
+.c-water__wave--back {
+    right: 0;
+    fill: #082e3f;
+    animation: wave-back 5s linear infinite;
+}
+
+.c-water__wave--front {
+    left: 0;
+    margin-bottom: -2px;
+    fill: #1990c7;
+    animation: wave-front 10s linear infinite;
+}
+
+.c-water__wave--back1 {
+    right: 0;
+    fill: #1990c7;
+    opacity: 0.5;
+    animation: wave-back 15s linear infinite;
+}
+
+.c-water__wave--front1 {
+    left: 0;
+    fill: #082e3f;
+    opacity: 0.5;
+    animation: wave-front 20s linear infinite;
+}
+
+@-webkit-keyframes wave-front {
+    to {
+        transform: translate(-50%);
+    }
+}
+
+@keyframes wave-front {
+    to {
+        transform: translate(-50%);
+    }
+}
+
+@-webkit-keyframes wave-back {
+    to {
+        transform: translate(50%);
+    }
+}
+
+@keyframes wave-back {
+    to {
+        transform: translate(50%);
+    }
+}
