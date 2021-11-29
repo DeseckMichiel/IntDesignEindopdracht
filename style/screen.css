@@ -2,13 +2,15 @@
 #Variables
 \*------------------------------------*/
 
-:root {
+ :root {
     /* typography */
     --global-root-font-size: 15;
     /* colors */
-    --global-color-alpha-light: #A3A0FB80;
-    --global-color-alpha: #A3A0FB;
-    --global-color-beta: #3B86FF;
+    --global-color-alpha: #9bd1eb;
+    --global-color-beta: #1990c7;
+    --global-color-gamma: #082e3f;
+    --global-color-delta: #205d8c;
+    --global-color-background: linear-gradient(180deg, var(--global-color-delta) 0, var(--global-color-gamma));
     --global-color-neutral-xxxx-light: #F0F0F7;
     --global-color-neutral-xxx-light: #EBEBF2;
     --global-color-neutral-xx-light: #D7DAE2;
@@ -18,21 +20,9 @@
     --global-color-neutral-dark: #4D4F5C;
     --global-color-neutral-x-dark: #43425D;
     --global-color-neutral-xx-dark: #3B3B53;
-    /* Shadows */
-    --global-box-shadow: 0 0 0 1px rgba(0, 0, 0, .025), 0 2px 6px rgba(0, 0, 0, .05);
-    --global-box-shadow-lg: 0 0 0 1px rgba(0, 0, 0, .025), 0 2px 10px rgba(0, 0, 0, .1);
-    --global-input-shadow: 0 2px 3px rgba(0, 0, 0, .05);
-    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light);
-    /* radius */
-    --global-borderRadius: calc(4rem / var(--global-root-font-size));
+    /* Opacity */
+    --global-opacity: 0.5;
     /* Whitespace */
-    /* 
-        global font-size = 15px
-        baseline = 5px        
-        15px = 1rem
-        5px = 1rem/3
-        This would equal to 0.3333333...rem but let the browser do the math
-    */
     --global-baseline: calc(1rem / 3);
     --global-whitespace-xxs: var(--global-baseline);
     /* = 5px */
@@ -47,8 +37,11 @@
     --global-whitespace-xl: calc(var(--global-baseline) * 6);
     /* = 30px */
     /* transitions */
-    --global-transition-alpha: .2s;
-    --global-transition-beta: 1s;
+    --global-transistion: 1s;
+    --global-transition-alpha: calc(var(--global-transistion)*5);
+    --global-transition-beta: calc(var(--global-transistion)*10);
+    --global-transition-gamma: calc(var(--global-transistion)*15);
+    --global-transition-delta: calc(var(--global-transistion)*20);
 }
 
 
@@ -60,17 +53,26 @@
 /*
     Generic: Page
     ---
-    Global page styles + universal box-sizing:
+    Global page styles
 */
 
 html {
+    font-size: var(--global-root-font-size);
     font-family: loos-normal, sans-serif;
-    background: #fafafa;
+    color: var(--global-color-neutral-dark);
+    background: var(--global-color-neutral-xxxx-light);
+}
+
+ ::-moz-selection {
+    background: var(--global-color-alpha);
+    color: white;
+    text-shadow: none;
 }
 
  ::selection {
-    background: #1990c7;
-    color: #fafafa;
+    background: var(--global-color-alpha);
+    color: white;
+    text-shadow: none;
 }
 
 
@@ -102,6 +104,7 @@ html {
 \*------------------------------------*/
 
 .c-app {
+    --c-app__topbar-height: calc(var(--global-baseline) * 30);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -111,66 +114,67 @@ html {
     margin-left: auto;
     margin-right: auto;
     color: #fafafa;
-    background: linear-gradient(180deg, #205d8c 0, #002949);
+    background: var(--global-color-background);
+    display: grid;
+    grid-template-rows: var(--c-app__topbar-height) 1fr;
 }
 
 .c-title {
     display: flex;
     font-weight: 700;
     justify-content: center;
+    margin-bottom: 0;
+}
+
+.c-subtitle {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .c-location {
-    color: #9bd1eb;
+    color: var(--global-color-alpha);
     font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
 
 .c-height {
-    color: #9bd1eb;
+    color: var(--global-color-alpha);
     font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
+.c-content {
+    min-width: 12rem;
+}
+
+.c-button {
+    fill: var(--global-color-neutral-xxx-light);
 }
 
 .c-inline {
     justify-content: center;
-    gap: 5px;
+    gap: var(--global-baseline);
     align-items: center;
     display: inline-flex;
 }
 
 .c-zeespiegel {
-    transform: translateY(720%);
-    z-index: 10;
-    border-bottom: 3px solid white;
-}
-
-@media(max-height:950px) {
-    .c-zeespiegel {
-        transform: translateY(890%);
-    }
-}
-
-@media(max-height:850px) {
-    .c-zeespiegel {
-        transform: translateY(740%);
-    }
-}
-
-@media(max-height:750px) {
-    .c-zeespiegel {
-        transform: translateY(445%);
-    }
-}
-
-@media(max-height:650px) {
-    .c-zeespiegel {
-        transform: translateY(335%);
-    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateY(60%);
 }
 
 .c-zeespiegel-tekst {
     text-align: right;
-    margin-bottom: 1px;
-    padding-right: 10px;
+    margin-bottom: calc(var(--global-baseline)/5);
+    padding-right: var(--global-whitespace-xs);
+    border-bottom: var(--global-baseline) solid white;
 }
 
 .c-water {
@@ -179,10 +183,10 @@ html {
     left: 0;
     height: 100%;
     width: 100%;
-    background: #1990c7;
+    background: var(--global-color-beta);
     will-change: transform;
     transform: translateY(100%);
-    transition: transform 1s ease-in-out;
+    transition: transform var(--global-transistion) ease-in-out;
 }
 
 .c-water__wave {
@@ -193,29 +197,29 @@ html {
 
 .c-water__wave--back {
     right: 0;
-    fill: #082e3f;
-    animation: wave-back 5s linear infinite;
+    fill: var(--global-color-gamma);
+    animation: wave-back var(--global-transition-alpha) linear infinite;
 }
 
 .c-water__wave--front {
     left: 0;
     margin-bottom: -2px;
-    fill: #1990c7;
-    animation: wave-front 10s linear infinite;
+    fill: var(--global-color-beta);
+    animation: wave-front var(--global-transition-beta) linear infinite;
 }
 
 .c-water__wave--back1 {
     right: 0;
-    fill: #1990c7;
-    opacity: 0.5;
-    animation: wave-back 15s linear infinite;
+    fill: var(--global-color-beta);
+    opacity: var(--global-opacity);
+    animation: wave-back var(--global-transition-gamma) linear infinite;
 }
 
 .c-water__wave--front1 {
     left: 0;
-    fill: #082e3f;
-    opacity: 0.5;
-    animation: wave-front 20s linear infinite;
+    fill: var(--global-color-gamma);
+    opacity: var(--global-opacity);
+    animation: wave-front var(--global-transition-delta) linear infinite;
 }
 
 @-webkit-keyframes wave-front {

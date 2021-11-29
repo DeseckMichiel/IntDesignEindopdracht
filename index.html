@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -15,53 +15,56 @@
 </head>
 
 <body class="u-space-center-center">
-    <main class="c-app">
-        <h1 class="c-title">Sea Level</h1>
-        <div class="controls c-inline">
-            <div class="js-before">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.91 6.71c-.39-.39-1.02-.39-1.41 0L8.91 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L11.03 12l3.88-3.88c.38-.39.38-1.03 0-1.41z"/></svg>
-            </div>
-            <div class="c-inline">
-                <h2 class="c-location js-location">Location</h2>
-                <h3 class="c-height js-height">Height</h3>
-            </div>
-            <div class="js-next">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"/></svg>
+    <div class="c-app">
+        <div class="c-app__head">
+            <h1 class="c-title">Sea Level</h1>
+            <div class="c-subtitle controls">
+                <div class="js-before c-button c-button-before">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.91 6.71c-.39-.39-1.02-.39-1.41 0L8.91 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L11.03 12l3.88-3.88c.38-.39.38-1.03 0-1.41z"/></svg>
+                </div>
+                <div class="c-content">
+                    <h2 class=" c-location js-location ">Location</h2>
+                    <h3 class="c-height js-height ">Height</h3>
+                </div>
+                <div class="js-next c-button c-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg " height="36px " viewBox="0 0 24 24 " width="36px "><path d="M0 0h24v24H0V0z " fill="none "/><path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z "/></svg>
+                </div>
             </div>
         </div>
-        <div class="c-water js-waves">
-            <svg class="c-water__wave c-water__wave--back" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 447 8">
-              <path class="cls-1" d="M211.17-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M211.17-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M-11.83-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M-11.83-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z" transform="translate(123.83 99.5)"/>
-            </svg>
-            <svg class="c-water__wave c-water__wave--back1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 447 8">
-              <path class="cls-1" d="M211.17-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M211.17-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M-11.83-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z" transform="translate(123.83 99.5)"/>
-              <path class="cls-1" d="M-11.83-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z" transform="translate(123.83 99.5)"/>
-            </svg>
-            <svg class="c-water__wave c-water__wave--front1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 447 8">
-              <path class="cls-1" d="M212-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H212Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M212-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H212Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M-12-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H-12Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M-12-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H-12Z" transform="translate(124 99.5)"/>
-            </svg>
-            <svg class="c-water__wave c-water__wave--front" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 447 8">
-              <path class="cls-1" d="M212-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H212Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M212-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H212Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M-12-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H-12Z" transform="translate(124 99.5)"/>
-              <path class="cls-1" d="M-12-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H-12Z" transform="translate(124 99.5)"/>
-            </svg>
+        <div class="c-app__main">
+            <div class="c-water js-waves ">
+                <svg class="c-water__wave c-water__wave--back " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " viewBox="0 0 447 8 ">
+                        <path class="cls-1 " d="M211.17-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M211.17-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M-11.83-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M-11.83-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z " transform="translate(123.83 99.5) "/>
+                        </svg>
+                <svg class="c-water__wave c-water__wave--back1 " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " viewBox="0 0 447 8 ">
+                        <path class="cls-1 " d="M211.17-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M211.17-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M-11.83-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8h-112Z " transform="translate(123.83 99.5) "/>
+                        <path class="cls-1 " d="M-11.83-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8h112Z " transform="translate(123.83 99.5) "/>
+                        </svg>
+                <svg class="c-water__wave c-water__wave--front1 " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " viewBox="0 0 447 8 ">
+                        <path class="cls-1 " d="M212-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H212Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M212-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H212Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M-12-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H-12Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M-12-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H-12Z " transform="translate(124 99.5) "/>
+                        </svg>
+                <svg class="c-water__wave c-water__wave--front " version="1.1 " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " viewBox="0 0 447 8 ">
+                        <path class="cls-1 " d="M212-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H212Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M212-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H212Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M-12-91.5c17.2-.16,31-1,40.88-1.8,10.72-.88,21.2-2.08,21.84-2.16,12.48-1.44,15.68-2.16,24.08-3,5.68-.52,14.32-1.12,25.2-1.08h0v8H-12Z " transform="translate(124 99.5) "/>
+                        <path class="cls-1 " d="M-12-91.5c-17.2-.16-31-1-40.88-1.8-10.72-.88-21.2-2.08-21.84-2.16-12.48-1.44-15.68-2.16-24.08-3-5.76-.52-14.32-1.12-25.2-1.08h0v8H-12Z " transform="translate(124 99.5) "/>
+                        </svg>
+            </div>
+            <div class="c-zeespiegel ">
+                <h3 class="c-zeespiegel-tekst ">
+                    0m
+                </h3>
+            </div>
         </div>
-        <div class="c-zeespiegel">
-            <h3 class="c-zeespiegel-tekst">
-                0m
-            </h3>
-        </div>
-    </main>
-
+    </div>
 </body>
 
 </html>

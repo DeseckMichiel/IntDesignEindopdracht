@@ -4,8 +4,8 @@ let number = 0,
 const showResult = function(queryResponse) {
     // We gaan eerst een paar onderdelen opvullen
     // Zorg dat de juiste locatie weergegeven wordt, volgens wat je uit de API terug krijgt.
-    document.querySelector('.js-location').innerText = titleCase(`${queryResponse.list[number].meta.station.name} ●`)
-        // Toon ook de juiste tijd voor de opkomst van de zon en de zonsondergang.
+    document.querySelector('.js-location').innerText = titleCase(`${queryResponse.list[number].meta.station.name}`)
+        // Toon ook de juiste tijd voor de opkomst van de zon en de zonsondergang. ●
     let now = new Date()
     let dateNow = new Date(now.getTime())
     let HourNow = dateNow.getHours()
