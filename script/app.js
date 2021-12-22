@@ -5,6 +5,16 @@ const showResult = function(queryResponse) {
     // We gaan eerst een paar onderdelen opvullen
     // Zorg dat de juiste locatie weergegeven wordt, volgens wat je uit de API terug krijgt.
     document.querySelector('.js-location').innerText = titleCase(`${queryResponse.list[number].meta.station.name}`)
+    number_before = number - 1
+    if (number_before < 0) {
+        number_before = lengte - 1
+    }
+    number_next = number + 1
+    if (number_next >= lengte) {
+        number_next = 0
+    }
+    document.querySelector('.js-location-before').innerText = titleCase(`${queryResponse.list[number_before].meta.station.name}`)
+    document.querySelector('.js-location-next').innerText = titleCase(`${queryResponse.list[number_next].meta.station.name}`)
         // Toon ook de juiste tijd voor de opkomst van de zon en de zonsondergang. ●
     let now = new Date()
     let dateNow = new Date(now.getTime())

@@ -139,6 +139,13 @@ html {
     justify-content: center;
 }
 
+.c-location-2 {
+    color: var(--global-color-alpha);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
 .c-height {
     color: var(--global-color-alpha);
     font-weight: 400;
@@ -147,11 +154,18 @@ html {
 }
 
 .c-content {
-    min-width: 12rem;
+    min-width: 12em;
 }
 
 .c-button {
     fill: var(--global-color-neutral-xxx-light);
+    display: flex;
+    justify-content: center;
+}
+
+.c-button-style {
+    height: var(--global-whitespace-xl);
+    width: var(--global-whitespace-xl);
 }
 
 .c-inline {
@@ -175,6 +189,25 @@ html {
     margin-bottom: calc(var(--global-baseline)/5);
     padding-right: var(--global-whitespace-xs);
     border-bottom: var(--global-baseline) solid white;
+}
+
+@media (max-width: 700px) {
+    .c-content-none {
+        display: none;
+    }
+    .c-location {
+        line-height: 0.5em;
+    }
+    .c-location-2 {
+        display: none;
+    }
+    .c-height {
+        line-height: 0.5em;
+    }
+    .c-button-style {
+        height: var(--global-whitespace-lg);
+        width: var(--global-whitespace-lg);
+    }
 }
 
 .c-water {
